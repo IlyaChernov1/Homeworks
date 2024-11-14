@@ -1,11 +1,11 @@
 from datetime import datetime
 
-
 date_formats = {
     "The Moscow Times": "%A, %B %d, %Y",
     "The Guardian": "%A, %d.%m.%y",
     "Daily News": "%A, %d %B %Y"
 }
+
 
 def convert_date(date_str):
     for format_name, date_format in date_formats.items():
@@ -14,11 +14,12 @@ def convert_date(date_str):
             print(f"{format_name}: {date_obj}")
             return date_obj
         except ValueError:
-            
+
             continue
 
     print("Формат даты не распознан.")
     return None
+
 
 print("Введите дату или 'exit' для завершения программы:")
 while True:
@@ -27,4 +28,3 @@ while True:
         print("Программа завершена.")
         break
     convert_date(user_input)
-
